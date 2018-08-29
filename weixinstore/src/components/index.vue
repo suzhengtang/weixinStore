@@ -13,7 +13,7 @@
           <img class="tab-li-img" src="../assets/images/home.png" alt="首页">
           <p class="tab-li-text">首页</p>
         </li>
-        <li class="tab-li">
+        <li class="tab-li" @click="tabChange">
           <img class="tab-li-img" src="../assets/images/tongxl.png" alt="通讯录">
           <p class="tab-li-text">通讯录</p>
         </li>
@@ -38,6 +38,11 @@ export default {
       title: '微信',
       content: "我是内容",
       footer: "我是底部栏",
+    }
+  },
+  methods: {
+    tabChange() {
+      alert("标签切换！");
     }
   }
 }
