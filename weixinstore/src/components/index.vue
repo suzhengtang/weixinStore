@@ -9,7 +9,7 @@
     </div>
     <div class="footer">
       <ul class="footer-tab">
-        <li class="tab-li">
+        <li class="tab-li" @click="tabChange()">
           <img class="tab-li-img" src="../assets/images/home.png" alt="首页">
           <p class="tab-li-text">首页</p>
         </li>
@@ -17,11 +17,11 @@
           <img class="tab-li-img" src="../assets/images/tongxl.png" alt="通讯录">
           <p class="tab-li-text">通讯录</p>
         </li>
-        <li class="tab-li">
+        <li class="tab-li" @click="tabChange">
           <img class="tab-li-img" src="../assets/images/fax.png" alt="发现">
           <p class="tab-li-text">发现</p>
         </li>
-        <li class="tab-li">
+        <li class="tab-li" @click="tabChange">
           <img class="tab-li-img" src="../assets/images/me.png" alt="我的">
           <p class="tab-li-text">我的</p>
         </li>
@@ -42,7 +42,7 @@ export default {
   },
   methods: {
     tabChange() {
-      alert("标签切换！");
+      alert("我是单页面还是多页面开发呢！");
     }
   }
 }
