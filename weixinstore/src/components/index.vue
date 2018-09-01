@@ -2,6 +2,9 @@
   <div class="index">
     <div class="head">
       <h4 class="head-title">{{title}}</h4>
+      <span class="iconMore">
+        <img src="../assets/images/add.png" alt="更多">
+      </span>
     </div>
     <div class="content">
       <p>{{content}}</p>
@@ -61,11 +64,24 @@ export default {
       width: 100%;
       height: 0.88rem;
       background-color: #000;
+      position: relative;
       .head-title{
         text-align: center;
         line-height: 0.88rem;
         color: #fff;
         font-size: 0.34rem;
+      }
+      .iconMore{
+        width: 0.4rem;
+        height:0.4rem;
+        position: absolute;
+        top: 50%;
+        margin-top: -0.2rem;
+        right: 0.2rem;
+        img{
+          width: 100%;
+          height: 100%;
+        }
       }
     }
     .content{
