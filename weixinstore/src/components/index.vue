@@ -9,14 +9,37 @@
     <div class="content">
       <div class="content-search">
         <div class="search-main">
-          <input type="text" class="search-text">
-          <p class="search-placeholder">{{search}}</p>
+          <input type="text" class="search-text" v-model="searchText" @blur="onBlur()" @focus="onFocus()">
+          <p class="search-placeholder" :class="{'status':statusShow}">{{search}}</p>
           <span class="search-icon"></span>
         </div>
       </div>
       <div class="content-main">
         <ul class="main-all">
-          <li class="main-all-li">{{contentLi}}</li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -55,11 +78,23 @@ export default {
       me: "我的",
       search: "搜索",
       contentLi: "内容部分明天开始做！",
+      searchText: '',
+      statusShow: false,
     }
   },
   methods: {
     tabChange() {
       alert("我是单页面还是多页面开发呢！");
+    },
+    onBlur() {   //失去焦点
+      if(this.searchText == ""){
+        this.statusShow = false;
+      }else{
+        this.statusShow = true;
+      }
+    },
+    onFocus() {   //获得焦点
+      this.statusShow = true;
     }
   }
 }
@@ -118,6 +153,8 @@ export default {
             height: 100%;
             border-radius: 0.10rem;
             background-color: #fff;
+            padding: 0 0.2rem;
+            box-sizing: border-box;
           }
           .search-placeholder{
             font-size: 0.32rem;
@@ -129,17 +166,22 @@ export default {
               content: '';
               width: 0.32rem;
               height: 0.32rem;
-              background: red;
+              background: url("../assets/images/search.png") 0 0;
+              background-size: 0.32rem auto;
               display: inline-block;
               position: relative;
               left: -0.1rem;
               top: 0.04rem;
             }
           }
+          .status{
+            display: none;
+          }
           .search-icon{
             width: 0.32rem;
             height: 0.32rem;
-            background-color: red;
+            background: url("../assets/images/spick.png") 0 0;
+            background-size: 0.32rem auto;
             display: block;
             position: absolute;
             top: 0.18rem;
@@ -148,8 +190,61 @@ export default {
         }
       }
       .content-main{
-        color: red;
-        font-size: 0.4rem;
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        padding-left: 0.2rem;
+        box-sizing: border-box;
+        .main-all{
+          width: 100%;
+          height: 100%;
+          .main-all-li{
+            width: 100%;
+            height: 1.36rem;
+            border-bottom: 1px solid #ddd;
+            box-sizing: border-box;
+            .li-left{
+              float: left;
+              width: 1.20rem;
+              height: 100%;
+              position: relative;
+              .li-left-head{
+                width: 1.01rem;
+                height: 1.01rem;
+                position: absolute;
+                left: 0;
+                top: 0;
+                bottom: 0;
+                margin: auto;
+              }
+            }
+            .li-right{
+              float: left;
+              width: 5.90rem;
+              height: 100%;
+              padding-top: 0.20rem;
+              box-sizing: border-box;
+              .li-right-title{
+                width: 100%;
+                height: 0.50rem;
+                h5{
+                  float: left;
+                  font-size: 0.34rem;
+                  font-weight: 400;
+                  color: #000;
+                }
+                span{
+                  float: right;
+                  font-size: 0.2rem;
+                  color: #aaa;
+                }
+              }
+              .li-right-dis{
+                color: #888;
+              }
+            }
+          }
+        }
       }
     }
     .footer{
