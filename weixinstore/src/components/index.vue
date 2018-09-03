@@ -40,6 +40,114 @@
               <p class="li-right-dis">今天有空吗？一起打球去...</p>
             </div>
           </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
+          <li class="main-all-li">
+            <div class="li-left">
+              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+            </div>
+            <div class="li-right">
+              <div class="li-right-title">
+                <h5>苏正堂</h5>
+                <span>10:22</span>
+              </div>
+              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+            </div>
+          </li>
         </ul>
       </div>
     </div>
@@ -113,7 +221,10 @@ export default {
       width: 100%;
       height: 0.88rem;
       background-color: #000;
-      position: relative;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 100;
       .head-title{
         text-align: center;
         line-height: 0.88rem;
@@ -137,6 +248,7 @@ export default {
       width: 100%;
       height: auto;
       background-color: #eee;
+      margin-top: 0.88rem;
       .content-search{
         width: 100%;
         height: 1.10rem;
