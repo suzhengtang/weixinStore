@@ -16,127 +16,7 @@
       </div>
       <div class="content-main">
         <ul class="main-all">
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
-            <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
-            </div>
-            <div class="li-right">
-              <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
-              </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
-            </div>
-          </li>
-          <li class="main-all-li">
+          <li class="main-all-li" >
             <div class="li-left">
               <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
             </div>
@@ -155,7 +35,7 @@
       <ul class="footer-tab">
         <li class="tab-li" @click="tabChange()">
           <img class="tab-li-img" src="../assets/images/home.png" alt="首页">
-          <p class="tab-li-text">{{home}}}</p>
+          <p class="tab-li-text">{{home}}</p>
         </li>
         <li class="tab-li" @click="tabChange">
           <img class="tab-li-img" src="../assets/images/tongxl.png" alt="通讯录">
@@ -189,6 +69,21 @@ export default {
       searchText: '',
       statusShow: false,
     }
+  },
+  created() {
+    let dataMsg = '';
+    // this.$http.post('http://localhost:8088/post', formData).then((response) => {
+    //     // success callback
+    //     console.log(response.data);
+    // }, (response) => {
+    //       console.log("error");
+    //     // error callback
+    // });
+    this.$http.get('../../assets/js/data.js').then((response) => {
+        console.log(response.data);
+    }, (response) => {
+          console.log("error");
+    });
   },
   methods: {
     tabChange() {
