@@ -79,10 +79,10 @@ export default {
     //       console.log("error");
     //     // error callback
     // });
-    this.$http.get('../../assets/js/data.js').then((response) => {
+    this.$http.get('/api/appData').then((response) => {
         console.log(response.data);
     }, (response) => {
-          console.log("error");
+        console.log("error");
     });
   },
   methods: {

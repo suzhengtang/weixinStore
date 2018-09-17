@@ -1,0 +1,42 @@
+{
+    "dataList": [
+        {
+            "images": "../assets/images/head.png",
+            "name": "苏正堂",
+            "time": "10:23",
+            "content": "今天有空吗？一起打球去...",
+            "title": "我是放头像的地方"
+        },
+        {
+            "images": "../assets/images/head.png",
+            "name": "苏良堂",
+            "time": "11:23",
+            "content": "明天就要上线了，今天加班完成哈",
+            "title": "我是放头像的地方"
+        },
+        {
+            "images": "../assets/images/head.png",
+            "name": "谢明菊",
+            "time": "10:40",
+            "content": "今天的资料已经填完，待验收",
+            "title": "我是放头像的地方"
+        },
+        {
+            "images": "../assets/images/head.png",
+            "name": "张三",
+            "time": "12:23",
+            "content": "不要太晚了...",
+            "title": "我是放头像的地方"
+        },
+        {
+            "images": "../assets/images/head.png",
+            "name": "李四",
+            "time": "14:28",
+            "content": "我在楼下等你...",
+            "title": "我是放头像的地方"
+        }
+    ],
+    "msg": "success",
+    "status": 1,
+    "date": 12312312131
+}
