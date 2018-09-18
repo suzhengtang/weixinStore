@@ -16,16 +16,16 @@
       </div>
       <div class="content-main">
         <ul class="main-all">
-          <li class="main-all-li" >
+          <li class="main-all-li" v-for="(item, index) in dataMsg">
             <div class="li-left">
-              <img src="../assets/images/head.png" alt="我是放头像的地方" class="li-left-head">
+              <img src="../assets/images/head.png" :alt="item.title" class="li-left-head">
             </div>
             <div class="li-right">
               <div class="li-right-title">
-                <h5>苏正堂</h5>
-                <span>10:22</span>
+                <h5>{{item.name}}</h5>
+                <span>{{item.time}}</span>
               </div>
-              <p class="li-right-dis">今天有空吗？一起打球去...</p>
+              <p class="li-right-dis">{{item.content}}</p>
             </div>
           </li>
         </ul>
@@ -68,10 +68,10 @@ export default {
       contentLi: "内容部分明天开始做！",
       searchText: '',
       statusShow: false,
+      dataMsg: [],
     }
   },
   created() {
-    let dataMsg = '';
     // this.$http.post('http://localhost:8088/post', formData).then((response) => {
     //     // success callback
     //     console.log(response.data);
@@ -80,7 +80,7 @@ export default {
     //     // error callback
     // });
     this.$http.get('/api/appData').then((response) => {
-        console.log(response.data);
+        this.dataMsg = response.data.data.dataList;
     }, (response) => {
         console.log("error");
     });
