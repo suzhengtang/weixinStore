@@ -87,7 +87,22 @@ export default {
   },
   methods: {
     tabChange() {
-      alert("我是单页面还是多页面开发呢！");
+      // alert("我是单页面还是多页面开发呢！");
+      //以下是我上班（9/29）遇到的问题，解决方法如下：
+      let arr = [];
+      let arrA = [{id: '1'},{id: '2'}];
+      let arrB = [{name: 'zs', age: '20', like: 'che', id: '1'},{name: 'ls', age: '22', like: 'fang', id: '2'}];
+      for(let i=0; i<arrA.length; i++){
+        debugger;
+        for(let item in arrA[i]){
+          if(item == "name"){
+            arr = arrA;
+          }else{
+            arr = arrB;
+          }
+        }
+      }
+      console.log(arr);
     },
     onBlur() {   //失去焦点
       if(this.searchText == ""){
