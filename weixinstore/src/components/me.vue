@@ -9,7 +9,7 @@ export default {
     name: "me",
     data() {
         return {
-            me: "我就是我！"
+            me: "个人简历（响应式）"
         }
     }
 }
