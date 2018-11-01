@@ -143,7 +143,7 @@ sortArr() {
         _tmp;
         var newArr = [];
     // 按照特定的参数将数组排序将具有相同值得排在一起
-    arr = arr.sort(function(a, b) {
+    arr = arr.sort(function(a, b) {  //数组排序方法
         var s = a["Code"],
             t = b["Code"];
         return s < t ? -1 : 1;
@@ -173,7 +173,7 @@ sortArr() {
 
 <style lang="less" scoped>
 // 单位换算；
-//0.28rem = 14px; 0.24rem  = 12px;
+//0.28rem = 14px; 0.24rem = 12px;
 
 .index {
   width: 100%;
