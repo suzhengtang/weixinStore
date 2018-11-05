@@ -125,7 +125,7 @@ export default {
       this.statusShow = true;
     },
 
-    // 以下是我上班（10/12）遇到的问题，解决方法如下：
+    // 以下是我上班（10/12）遇到的问题(将一个数组里面的对象按一定的顺序重新排列)，解决方法如下：
 
 // 传入一个数组
 // 按照特定方式格式化
@@ -135,8 +135,8 @@ sortArr() {
         {Code:'x',Quantity:2,ItemType:'normal'},
         {Code:'y',Quantity:1,ItemType:'spec'},
         {Code:'x',Quantity:5,ItemType:'normal'},
-        {Code:'y',Quantity:2,ItemType:'spec'},
-        {Code:'z',Quantity:1,ItemType:'normal'}
+        {Code:'z',Quantity:1,ItemType:'normal'},
+        {Code:'y',Quantity:2,ItemType:'spec'}
     ];
     var _arr = [],
         _t = [],
