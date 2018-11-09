@@ -89,6 +89,7 @@ export default {
     );
 
     this.sortArr();
+    this.sortArr1();
   },
   methods: {
     tabChange() {
@@ -127,46 +128,81 @@ export default {
 
     // 以下是我上班（10/12）遇到的问题(将一个数组里面的对象按一定的顺序重新排列)，解决方法如下：
 
-// 传入一个数组
-// 按照特定方式格式化
-sortArr() {
-    var arr=[
-        {Code:'x',Quantity:1,ItemType:'normal'},
-        {Code:'x',Quantity:2,ItemType:'normal'},
-        {Code:'y',Quantity:1,ItemType:'spec'},
-        {Code:'x',Quantity:5,ItemType:'normal'},
-        {Code:'z',Quantity:1,ItemType:'normal'},
-        {Code:'y',Quantity:2,ItemType:'spec'}
-    ];
-    var _arr = [],
-        _t = [],
-        _tmp;
-        var newArr = [];
-    // 按照特定的参数将数组排序将具有相同值得排在一起
-    arr = arr.sort(function(a, b) {  //数组排序方法
-        var s = a["Code"],
-            t = b["Code"];
-        return s < t ? -1 : 1;
-    });
-    if ( arr.length ){
-        _tmp = arr[0]["Code"];
-    }
-    // 将相同类别的对象添加到统一个数组
-    for (var i in arr) {
-        if ( arr[i]["Code"] === _tmp ){
-            _t.push( arr[i] );
-        } else {
-            _tmp = arr[i]["Code"];
-            _arr.push( _t );
-            _t = [arr[i]];
+    // 传入一个数组
+    // 按照特定方式格式化
+    sortArr() {
+        var arr=[
+            {Code:'x',Quantity:1,ItemType:'normal'},
+            {Code:'x',Quantity:2,ItemType:'normal'},
+            {Code:'y',Quantity:1,ItemType:'spec'},
+            {Code:'x',Quantity:5,ItemType:'normal'},
+            {Code:'z',Quantity:1,ItemType:'normal'},
+            {Code:'y',Quantity:2,ItemType:'spec'}
+        ];
+        var _arr = [],
+            _t = [],
+            _tmp;
+            var newArr = [];
+        // 按照特定的参数将数组排序将具有相同值得排在一起
+        arr = arr.sort(function(a, b) {  //数组排序方法
+            var s = a["Code"],
+                t = b["Code"];
+            return s < t ? -1 : 1;
+        });
+        if ( arr.length ){
+            _tmp = arr[0]["Code"];
         }
+        // 将相同类别的对象添加到统一个数组
+        for (var i in arr) {
+            if ( arr[i]["Code"] === _tmp ){
+                _t.push( arr[i] );
+            } else {
+                _tmp = arr[i]["Code"];
+                _arr.push( _t );
+                _t = [arr[i]];
+            }
+        }
+        // 将最后的内容推出新数组
+        _arr.push( _t );
+        console.log(_arr.length);
+        newArr = _arr[0].concat(_arr[1],_arr[2]);
+        console.log(newArr);
+    },
+    sortArr1() {    //将一个数组里面的对象按制定的key值按一定的顺序重新排列
+        let arr=[
+            {Code:'x',Quantity:1,ItemType:'normal'},
+            {Code:'x',Quantity:2,ItemType:'normal'},
+            {Code:'y',Quantity:1,ItemType:'spec'},
+            {Code:'x',Quantity:5,ItemType:'normal'},
+            {Code:'z',Quantity:1,ItemType:'normal'},
+            {Code:'y',Quantity:2,ItemType:'spec'}
+        ];
+        let codeArr = [];
+        let codeOneArr = [];
+        let newArr = [];
+        for(let i=0; i<arr.length; i++){
+            for(let item in arr[i]){
+                if(item == "Code"){
+                    codeArr.push(arr[i][item]);
+                }
+            }
+        }
+        for(let j=0; j<codeArr.length; j++){
+            if(codeOneArr.indexOf(codeArr[j]) == -1){
+                codeOneArr.push(codeArr[j]);
+            }
+        }
+        for(let n=0; n<codeOneArr.length; n++){
+            for(let m=0; m<arr.length; m++){
+                for(let item in arr[m]){
+                    if(codeOneArr[n] == arr[m][item]){
+                        newArr.push(arr[m])
+                    }
+                }
+            }
+        }
+        console.log(newArr);
     }
-    // 将最后的内容推出新数组
-    _arr.push( _t );
-    console.log(_arr.length);
-    newArr = _arr[0].concat(_arr[1],_arr[2]);
-    console.log(newArr);
-}
   }
 };
 </script>
