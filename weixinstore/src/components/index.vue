@@ -102,7 +102,6 @@ export default {
         { name: "ls", age: "22", like: "fang", id: "2" }
       ];
       for (let i = 0; i < arrA.length; i++) {
-        debugger;
         for (let item in arrA[i]) {
           if (item == "name") {
             arr = arrA;

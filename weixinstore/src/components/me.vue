@@ -1,5 +1,5 @@
 <template>
-    <div class="me">
+    <div class="me" @click="ceshi">
         {{me}}
     </div>
 </template>
@@ -9,14 +9,21 @@ export default {
     name: "me",
     data() {
         return {
-            me: "个人简历（响应式）"
+            me: "jquery的学习"
+        }
+    },
+    methods: {
+        ceshi: function(){
+            $(".me").hide(2000);
         }
     }
 }
 </script>
 
 <style lang="less" scoped>
-
+.me{
+    color: red;
+}
 </style>
 
 
