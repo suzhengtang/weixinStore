@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         down: function(){
-            let arrA = ["1","2","3","4"];
+            let arrA = ["1","2","3","4","2"];
             let arrB = ["1;111","2;222","3;333","4;444","2;222"]; //判断数组中是否有相同的元素，将相同的元素抛出
             let arrC = [];
             $(".father").slideDown(2000,function(){
@@ -30,7 +30,7 @@ export default {
                         }
                     }
                 }
-                console.log(arrC);
+                console.log(arrC); 
             });
         },
         up: function(){
