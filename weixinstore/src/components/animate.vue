@@ -6,7 +6,7 @@
         </div>
         <div class="content">
             <ul class="content-all">
-                <li class="content-li" v-for="item in liArr">
+                <li class="content-li" v-for="item in liArr" id="ceshi">
                     <p class="li-text">{{item.liText}}</p>
                     <div class="li-pro">
                         <span class="pro-time">{{item.liTime}}</span>
@@ -27,19 +27,23 @@ export default {
     name: "animate",
     data() {
         return {
-            contentText: "11",
+            contentText: "",
+            list: {},
             liArr: [
-                {liText: "111hkjhk", liTime: "2018-10-10 12:12:12"}
+                {liText: "我是测试的文字", liTime: "2018-12-05 00:18:17"}
             ]
         }
     },
     created() {
-
+        this.time();
     },
     methods: {
         fabu() {
             if(this.contentText !== ""){
-                alert(this.contentText);
+                this.list.liText = this.contentText;
+                this.list.liTime = this.time();
+                this.liArr.unshift(this.list);
+                this.list = {};
             }
         },
         zhan() {
@@ -49,7 +53,23 @@ export default {
             alert("cai");
         },
         del() {
-            alert("del");
+            $("#ceshi").remove();
+        },
+        time() {
+            let time = "";
+            let date = new Date();
+            let year = date.getFullYear();
+            let month = date.getMonth() + 1;
+            let daty = date.getDate();
+            let h = date.getHours();
+            let m = date.getMinutes();
+            let s = date.getSeconds();
+            month = month<10 ? "0"+month : month;
+            daty = daty<10 ? "0"+daty : daty;
+            h = h<10 ? "0"+h : h;
+            m = m<10 ? "0"+m : m;
+            s = s<10 ? "0"+s : s;
+            return year+"-"+month+"-"+daty+" "+h+":"+m+":"+s;
         }
     }
 }
