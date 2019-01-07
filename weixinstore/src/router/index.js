@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import index from '@/components/index'
 import me from '../components/me'
-import animate from '../components/animate'
+import animate1 from '../components/animate1'
 
 Vue.use(Router)
 
@@ -19,9 +19,9 @@ export default new Router({
       component: me
     },
     {
-        path: '/animate',
-        name: 'animate',
-        component: animate
+        path: '/animate1',
+        name: 'animate1',
+        component: animate1
     }
   ]
 })
