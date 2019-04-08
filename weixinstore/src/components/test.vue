@@ -1,37 +1,40 @@
 <template>
-  <form action="">
-    <div class="name">
-      <label for="">姓名：</label><input v-model="formData.name" type="text">
-    </div>
-    <div class="discirption">
-      <label for="">描述：</label><input v-model="formData.dis" type="text">
-    </div>
-    <div>
-      <button @click="submit">提交</button>
-      <button @click="kong">重置</button>
-    </div>
-  </form>
+  <div class="box">
+    <form action="">
+      <div class="name">
+        <label for="">姓名：</label><input v-model="formDataTest.name" type="text">
+      </div>
+      <div class="discirption">
+        <label for="">描述：</label><input v-model="formDataTest.dis" type="text">
+      </div>
+      <div>
+        <button>提交</button>
+        <button>重置</button>
+      </div>
+    </form>
+
+    <item-vue @clickOn = "submit"></item-vue>
+  </div>
 </template>
 
 <script>
+  import itemVue from "./formPage.vue"
     export default {
         name: "test",
+      components: {
+        itemVue
+      },
       data(){
           return {
-            formData: {
-
+            formDataTest: {
+              name: "",
+              dis: ""
             }
           }
       },
       methods:{
-          kong() {
-            for(let item in this.formData){
-              delete this.formData[item]
-            }
-            console.log(this.formData)
-          },
-        submit() {
-            console.log(this.formData);
+        submit(pa) {
+          console.log(pa)
         }
       }
 
