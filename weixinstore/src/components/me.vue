@@ -4,6 +4,10 @@
         <button @click="up">{{btn2}}</button>
         <button @click="togger">{{btn3}}</button>
         <div class="father"></div>
+      <div class="url-ipt">
+        <label for="">{{lableData}}</label>
+        <input @blur="blurClick" v-model="iptMsg" type="text" placeholder="请输入你的w3账号">
+      </div>
     </div>
 </template>
 
@@ -15,6 +19,8 @@ export default {
             btn1: "展开",
             btn2: "收起",
             btn3: "切换",
+          lableData: "su/zheng/tang/",
+          iptMsg: ""
         }
     },
     methods: {
@@ -30,7 +36,7 @@ export default {
                         }
                     }
                 }
-                console.log(arrC); 
+                console.log(arrC);
             });
         },
         up: function(){
@@ -41,6 +47,17 @@ export default {
                 alert("我是切换完的回调函数！")
             });
         },
+      blurClick(){
+          let ipt = this.iptMsg;
+          let iptArr = ipt.split('/');
+          let iptArrData = [];
+          for(let i=0; i<iptArr.length; i++){
+            if(iptArr[i] !== ""){
+              iptArrData.push(iptArr[i]);
+            }
+          }
+          this.iptMsg = iptArrData.join('/');
+      }
     }
 }
 </script>
@@ -56,6 +73,11 @@ export default {
         background: green;
         margin: 0.2rem auto;
     }
+  input{
+    border: 1px solid green;
+    padding: 4px;
+    margin-left: 8px
+  }
 }
 </style>
 
